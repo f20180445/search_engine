@@ -1,6 +1,7 @@
 # search_engine
-@author: Jainam Manoj Gala
-@email: jgala@andrew.cmu.edu
+author: Jainam Manoj Gala
+
+email: jgala@andrew.cmu.edu
 
 A LLM-based search engine built on top of private Instagram data.
 
