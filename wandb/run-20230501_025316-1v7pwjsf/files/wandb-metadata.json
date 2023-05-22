@@ -1,0 +1,27 @@
+{
+    "os": "macOS-13.0-arm64-arm-64bit",
+    "python": "3.11.1",
+    "heartbeatAt": "2023-05-01T06:53:16.940403",
+    "startedAt": "2023-05-01T06:53:16.416133",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/jgala/Documents/scraper.py",
+    "host": "Jainams-MBP",
+    "username": "jgala",
+    "executable": "/usr/local/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 228.27386474609375,
+        "used": 11.965778350830078
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

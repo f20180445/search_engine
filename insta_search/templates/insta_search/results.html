@@ -1,0 +1,9 @@
+{% extends './index.html' %} 
+{%load static%} 
+{% block css %} 
+<link rel="stylesheet" href="{% static "insta_search/css/results.css"%}" /> 
+{% endblock css %} 
+
+{% block content %}
+<textarea placeholder="Remember, be nice!" cols="30" rows="15">{{result}}</textarea>
+{% endblock content %}

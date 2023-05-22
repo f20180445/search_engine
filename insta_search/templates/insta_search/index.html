@@ -1,0 +1,65 @@
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static "insta_search/css/index.css"%}" />
+    <!-- <link rel="stylesheet" href="{% static "insta_search/css/upload.css"%}" /> -->
+    {% block css %}
+
+    {% endblock css %}
+    <title>Insta Search</title>
+  </head>
+
+  <body>
+    <!-- Main Body Starts -->
+    <a href={% url 'upload-page' %}>
+      <button class='inputButton2' type="button" value="none" name='mybtn2'>Go to Upload</button>
+    </a>
+    <div class="mainBody">
+        <img
+        src="{% static "insta_search/img/insta_logo.png"%}"
+        alt="Instagram Logo"
+      />
+      <img
+        src="{% static "insta_search/img/instagram_text.png"%}"
+        alt="Instagram"
+      />
+
+      <!-- Search Starts -->
+      <div class="search">
+        <form action={% url 'results-page' %} method="POST">
+          {% csrf_token %}
+        <div class="search__input">
+          <span class="material-icons"> search </span>
+          <input type="text" name="query"/>
+        </div>
+          <div class="row-input">
+          <label class="form-control">
+            <input type="radio" name="type" value="followers" />
+            followers
+          </label>
+        
+          <label class="form-control">
+            <input type="radio" name="type" value="ads" />
+            ads
+          </label>
+        </div>
+
+        <div class="search__buttons">
+          <button>Ask My Instagram</button>
+        </div>
+      </form>
+      </div>
+      <!-- Search Ends -->
+
+      
+    <!-- Main Body Ends -->
+    {% block content %}
+    {% endblock content %}
+  </body>
+
+</html>

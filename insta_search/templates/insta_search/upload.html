@@ -1,0 +1,43 @@
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static "insta_search/css/index.css"%}" />
+    <link rel="stylesheet" href="{% static "insta_search/css/upload.css"%}" />
+    {% block css %}
+
+    {% endblock css %}
+    <title>Insta Search</title>
+  </head>
+  {% block content %}
+  <body>
+    <!-- Main Body Starts -->
+    <div class="mainBody">
+        <img
+        src="{% static "insta_search/img/insta_logo.png"%}"
+        alt="Instagram Logo"
+      />
+      <img
+        src="{% static "insta_search/img/instagram_text.png"%}"
+        alt="Instagram"
+      />
+      <!-- Upload Instagram Data -->
+      {% block form %}
+      <form action={% url 'uploaded-page' %} method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class='formInput' type="file" name="insta_data" multiple />
+        <p>Drag your files here or click in this area.</p>
+        <input class='inputButton' type="submit" value="Upload"> </input>
+        <a href={% url 'search-page' %}>
+        <button class='inputButton' type="button" value="none" name='mybtn2'>Go to Search</button>
+      </a>
+      </form>
+      
+      {% endblock form %}
+  </body>
+  {% endblock content %}
+</html>
